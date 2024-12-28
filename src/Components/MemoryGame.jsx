@@ -14,7 +14,7 @@ function MemoryGame() {
   const [startTime, setStartTime] = useState(null); // time counter//
   const [won, setWon] = useState(false); // when all the cards are flipped and user win //
 
-  const maxMoves = gridSize * gridSize + gridSize * 2;
+  const maxMoves = gridSize * gridSize + gridSize*gridSize;
  const gridOption = ["2","4","6","8","10"]
 
   function handleGridSize(e) {
