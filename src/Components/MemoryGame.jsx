@@ -15,7 +15,7 @@ function MemoryGame() {
   const [won, setWon] = useState(false); // when all the cards are flipped and user win //
 
   const maxMoves = gridSize * gridSize + gridSize * 2;
-  console.log(maxMoves);
+ const gridOption = ["2","4","6","8","10"]
 
   function handleGridSize(e) {
     const size = parseInt(e.target.value);
@@ -133,6 +133,7 @@ function MemoryGame() {
       <h1 className="text-4xl font-bold mb-6 mt-10 text-blue-900 mr-4">
         MATCH THE NUMBERS
       </h1>
+
       {/* input */}
       <div className="flex flex-row gap-2">
         <label
@@ -141,7 +142,8 @@ function MemoryGame() {
         >
           Grid Size :
         </label>
-        <input
+
+        <select
           className=" border-2 border-gray-200 rounded px-2 py-1 bg-slate-200 mr-2"
           type="number"
           id="grid-size"
@@ -149,7 +151,11 @@ function MemoryGame() {
           max="10"
           value={gridSize}
           onChange={handleGridSize}
-        />
+        >
+          {gridOption.map((option) => (<option key={option} value={option}>
+            {option}
+          </option>))}
+        </select>
       </div>
 
       {/* display moves */}
